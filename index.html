@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Flexbox Project</title>
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <div class="one">
+        <div class="oneone">
+            <div class="header">
+                <div class="logo"> <img src="../Downloads/Unconfortable Realities.png" alt="logo"></div>
+                <div class="logoname"> Unconfortable Realities </div>
+                <div class="ul">
+                    <ul>
+                        <li><a href="#">Cow</a></li>
+                        <li><a href="#">Pig</a></li>
+                        <li><a href="#">Chicken</a></li>
+                    </ul>
+                </div><!--ul-->
+            </div> <!--header-->
+
+            <div class="about">
+                <div class="a-container">
+                    <h1>Meat is Murder?</h1>
+                    <p>What does it mean? You should NOT insult people who works in meat industry!</p> 
+                    <p>It's vegan propaganda!! Be appreciate, don't push your opinion!!</p>
+                    <p>Vegan clams meat, fish, egg, dairy, huney, leather, fur, zoo, aquarium, animal test, hunting... </p>
+                    <p>It is very unconfortable, but why do they blam these things so much?</p>
+                    <button>Sign up</button>
+                </div> <!--a-container-->
+                <div id="slider">
+                    <ul id="slideWrap">
+                        <li><img src="https://cdn.pixabay.com/photo/2016/04/08/16/08/egg-1316407_960_720.jpg" alt="egg"></li>
+                        <li><img src="https://cdn.pixabay.com/photo/2012/02/17/14/52/chicken-14090_960_720.jpg" alt="chicken"></li>
+                        <li><img src="https://cdn.pixabay.com/photo/2010/11/29/nepal-393_960_720.jpg" alt="pighead"></li>
+                        <li><img src="https://cdn.pixabay.com/photo/2020/01/02/21/55/street-market-4736902_960_720.jpg" alt="pigeyes"></li>
+                        <li><img src="https://cdn.pixabay.com/photo/2019/12/05/05/52/sushi-4674352_960_720.jpg" alt="sushi"></li>
+                        <li><img src="https://cdn.pixabay.com/photo/2019/01/18/19/56/animals-3940552_960_720.jpg" alt="fishheads"></li>
+                        <li><img src="https://cdn.pixabay.com/photo/2018/01/06/07/25/market-3064479_960_720.jpg" alt="fishbody"></li>
+                        <li><img src="https://cdn.pixabay.com/photo/2020/03/11/17/56/rabbit-4922869_960_720.jpg" alt="huntedrabbits"></li>
+                        <li><img src="https://cdn.pixabay.com/photo/2015/04/22/08/09/hare-734365_960_720.jpg" alt="rabbits"></li>
+                        <li><img src="https://cdn.pixabay.com/photo/2020/02/29/15/04/vietnam-4890359_960_720.jpg" alt="hangmeat"></li>
+                    </ul><!--slideWrap-->
+                    <a id="prev" href="#">&#8810;</a>
+                    <a id="next" href="#">&#8811;</a>
+                    <script>
+                        var responsiveSlider = function(){
+                        var slider = document.getElementById("slider");
+                        var sliderWidth =  slider.offsetWidth;
+                        var slideList = document.getElementById("slideWrap");
+                        var count = 1;
+                        var items = slideList.querySelectorAll("li").length;
+                        var prev = document.getElementById("prev");
+                        var next = document.getElementById("next");
+                        window.addEventListener('resize', function(){
+                            sliderWidth = slider.offsetWidth;
+                        });
+                        var prevSlide = function() {
+                            if (count > 1) {
+                                count = count - 2;
+                                slideList.style.left = "-" + count * sliderWidth + "px";
+                                count++;                                
+                            }
+                            else if (count = 1) {
+                                count = items - 1;
+                                slideList.style.left = "-" + count * sliderWidth + "px";
+                                count++;                                
+                            }
+                        };
+                        var nextSlide = function() {
+                            if (count < items) {
+                                slideList.style.left = "-" + count * sliderWidth + "px";
+                                count++;                                
+                            }
+                            else if (count = items) {
+                                slideList.style.left = "0px";
+                                count = 1;                                
+                            }
+                        };
+                        next.addEventListener("click", function() {
+                            nextSlide();                            
+                        });
+                        prev.addEventListener("click", function() {
+                            prevSlide();                            
+                        });
+                        setInterval(function() {
+                            nextSlide()
+                        }, 3000);
+                        };                    
+                        window.onload = function() {
+                            responsiveSlider();
+                        }
+                    </script>
+                </div><!--slider--> 
+            </div> <!--about-->
+        </div><!--oneone-->
+    </div> <!--one-->
+
+    <div class="two">
+        <div class="ttext">Have you had these thoughts?</div>
+        <div class="windows">
+            <div class="info">
+                <img src="https://images.unsplash.com/photo-1605522469906-3fe226b356bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80" alt="cutitngveggeis">
+                <div class="text"> Vegan kills plants. </div>
+            </div><!--info-->
+            <div class="info">
+                <img src="https://images.unsplash.com/photo-1531872326262-a0b0656d548d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGlvbiUyMGVhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="lion">
+                <div class="text"> Lions eat zebras. </div>
+            </div><!--info-->
+            <div class="info">
+                <img src="https://images.unsplash.com/photo-1533514114760-4389f572ae26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=368&q=80" alt="bunny">
+                <div class="text"> Humans are the top of the food chain.</div>
+            </div><!--info-->
+            <div class="info">
+                <img src="https://images.unsplash.com/photo-1585325700424-a896dfbdf065?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MzF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="vegan-meat">
+                <div class="text"> Meat is tasty.</div>
+            </div><!--info-->
+            <div class="info">
+                <img src="https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80" alt="veggies">
+                <div class="text"> I have nothing to eat if I were vegan.</div>
+            </div><!--info-->
+        </div> <!--windows-->
+    </div> <!--two-->
+
+    <div class="three">
+        <div class="quotecon">
+           <div class="quote">"Veganism is a philosophy and way of living which seeks to exclude—as far as is possible and practicable—all forms of exploitation of, and cruelty to, animals for food, clothing or any other purpose; and by extension, promotes the development and use of animal-free alternatives for the benefit of animals, humans and the environment. In dietary terms it denotes the practice of dispensing with all products derived wholly or partly from animals."</div>
+           <div class="auther"><a href="https://www.vegansociety.com/go-vegan/definition-veganism" title="The defenition of veganism">-The Vegan Society</a></div>
+        </div> <!--quotecon-->
+    </div> <!--three-->
+
+    <div class="four">
+        <div class="callcon">
+            <div class="callsign">
+                <div class="call">Call to action! It's time!</div>
+                <div class="sign">Sign up and seek what we can do for animals.</div>
+            </div><!--callsign-->
+            <button id="sign">Sign up</button>
+        </div><!--callcon-->
+    </div> <!--four-->
+
+    <div class="footer">
+        <div>Copyright © Mjawko 2022</div>
+    </div><!--footer-->
+
+    </body>
+</html>
