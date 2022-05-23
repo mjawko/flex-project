@@ -6,6 +6,7 @@
     height: 265px;
     overflow: hidden;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
 }
 
 #slider ul {
@@ -64,12 +65,9 @@
     height: 200px;
     object-fit: cover;
     border-radius: 50px;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-.logo img {
-    width: 50px;
-    height: 50px;
-}
 
 .logoname {
     font-weight: 600;
@@ -164,15 +162,21 @@ h1, h1 a {
     text-shadow: 0;
 }
 
-.info a:hover, .four a:hover, .auther:hover {
+.info a:hover, .auther:hover {
     color: red;
     text-decoration: underline;
+}
+
+button:hover, .four a:hover {
+    background-color: yellow;
+    color: #3882f6;
 }
 
 /*flexbox*/
 body {
     display: flex;
     flex-direction: column;
+    flex-shrink: 1;
 }
 
 .one {
@@ -224,6 +228,7 @@ button {
 
 .info {
     max-width: 200px;
+    flex-shrink: 1;
 }
 
 .windows {
@@ -274,3 +279,45 @@ button {
     text-align: center;
     padding: 50px;
 } 
+
+
+@media only screen and (max-width: 992px) {
+  /* For mobile phones: */
+
+  .callcon {
+        flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+    .about {
+        flex-direction: column;
+  }
+
+  #slider {
+      margin-top: 50px;
+  }
+    .two {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+  }
+
+  .windows {
+        flex-direction: column;
+        align-items: center;
+        gap: 80px;
+  }
+
+  .info {
+      max-width: 400px;
+  }
+
+   .info img {
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 50px;
+  }
+}
